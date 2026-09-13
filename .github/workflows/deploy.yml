@@ -39,6 +39,8 @@ jobs:
         run: pnpm install --frozen-lockfile
 
       - name: Build
+        env:
+          PORT: 5173
         run: pnpm run build
 
       - name: Setup Pages
