@@ -1,0 +1,1 @@
+- [Video audio fallback](video-audio-fallback.md) — keep the visual export complete and usable when optional generated audio is unavailable.

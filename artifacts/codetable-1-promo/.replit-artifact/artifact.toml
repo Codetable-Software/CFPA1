@@ -1,0 +1,29 @@
+kind = "video"
+previewPath = "/codetable-1-promo/"
+title = "Codetable 1 Promotional Animation"
+description = "A one-minute cinematic promotional animation for the fictional Codetable 1 flagship smartphone, using the provided product imagery, Indonesian copy, motion graphics, specifications, variants, and pricing."
+version = "1.0.0"
+id = "artifacts/codetable-1-promo"
+router = "path"
+videoAspectRatio = "16:9"
+
+[[services]]
+name = "web"
+paths = [ "/codetable-1-promo/" ]
+localPort = 24400
+
+[services.development]
+run = "pnpm --filter @workspace/codetable-1-promo run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/codetable-1-promo", "run", "build" ]
+serve = "static"
+publicDir = "artifacts/codetable-1-promo/dist/public"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "24400"
+BASE_PATH = "/codetable-1-promo/"
