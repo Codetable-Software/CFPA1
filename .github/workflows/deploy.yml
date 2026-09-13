@@ -41,6 +41,7 @@ jobs:
       - name: Build
         env:
           PORT: 5173
+          BASE_PATH: /CFPA1/
         run: pnpm run build
 
       - name: Setup Pages
